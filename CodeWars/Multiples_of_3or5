@@ -1,0 +1,21 @@
+def solution(number):
+    count = 0
+    for n in range(0, number):
+        if n % 3 == 0 and n % 5 == 0:
+            count += n
+        elif n % 3 == 0:
+            count += n
+        elif n % 5 == 0:
+            count+= n
+        else:
+            count += 0
+    return count
+
+solution(10)  # Example usage, should return 23
+
+def solution2(number):
+    threes = range(3, number, 3)
+    fives = range(5, number, 5)
+    return sum(set(list(threes) + list(fives)))
+
+print(solution2(10))
